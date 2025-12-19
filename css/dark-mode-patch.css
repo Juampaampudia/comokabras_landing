@@ -1,0 +1,8 @@
+﻿body.dark-mode .info-bar {
+    background: var(--dark-card);
+    border: 1px solid #1e293b;
+}
+
+body.dark-mode .info-text p {
+    color: var(--gray-text);
+}
