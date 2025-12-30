@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400..700&display=swap"
         rel="stylesheet">
 
     <!-- Icons -->
@@ -30,11 +30,11 @@
                 <i class="fa-solid fa-mountain-sun"></i> ComoKabras
             </a>
             <div class="nav-links">
-                <a href="#inicio" class="active">Inicio</a>
-                <a href="#filosofia">Filosofía</a>
-                <a href="#rutas">Rutas</a>
-                <a href="#sheila">Sobre Mí</a>
-                <a href="#contacto" class="btn-nav">Contacto</a>
+                <a href="#inicio" class="active" data-t="nav_inicio">Inicio</a>
+                <a href="#filosofia" data-t="nav_filosofia">Filosofía</a>
+                <a href="#rutas" data-t="nav_rutas">Rutas</a>
+                <a href="#sheila" data-t="nav_about">Sobre Mí</a>
+                <a href="#contacto" class="btn-nav" data-t="nav_contacto">Contacto</a>
 
                 <div class="language-selector">
                     <button class="lang-btn">
@@ -44,10 +44,13 @@
                     </button>
                     <div class="lang-dropdown">
                         <a href="#" data-lang="es" class="lang-option active">
-                            <span class="flag">🇪🇸</span> Español
+                            <span class="flag">🇪🇸</span> <span data-t="lang_es">Español</span>
                         </a>
                         <a href="#" data-lang="en" class="lang-option">
-                            <span class="flag">🇬🇧</span> English
+                            <span class="flag">🇬🇧</span> <span data-t="lang_en">English</span>
+                        </a>
+                        <a href="#" data-lang="fr" class="lang-option">
+                            <span class="flag">🇫🇷</span> <span data-t="lang_fr">Français</span>
                         </a>
                     </div>
                 </div>
@@ -67,15 +70,16 @@
         <div class="hero-bg-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="eyebrow">Senderismo Guiado & Bienestar</span>
-                <h1>Senderismo <br>con <span class="highlight" style="margin-left: 8px;">Alma</span></h1>
-                <p class="hero-desc">
+                <span class="eyebrow" data-t="hero_eyebrow">Senderismo Guiado & Bienestar</span>
+                <h1 data-t="hero_title">Senderismo <br>con <span class="highlight" style="margin-left: 8px;">Alma</span>
+                </h1>
+                <p class="hero-desc" data-t="hero_desc">
                     No solo subimos montañas, transformamos vidas.<br>
                     Rutas guiadas diseñadas para desconectar del estrés y reconectar contigo mismo.
                 </p>
                 <div class="hero-btns">
-                    <a href="#rutas" class="btn btn-primary">Ver Próximas Rutas</a>
-                    <a href="#sheila" class="btn btn-outline">Conoce a Sheila</a>
+                    <a href="#rutas" class="btn btn-primary" data-t="hero_btn_routes">Ver Próximas Rutas</a>
+                    <a href="#sheila" class="btn btn-outline" data-t="hero_btn_sheila">Conoce a Sheila</a>
                 </div>
             </div>
 
@@ -113,9 +117,9 @@
                         style="opacity: 1; transform: scale(1); transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
                         <circle cx="60" cy="340" r="8" fill="#f59e0b"></circle>
                         <text x="75" y="335" text-anchor="start" fill="white" font-size="16" font-weight="700"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">INICIO</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_inicio">INICIO</text>
                         <text x="75" y="352" text-anchor="start" fill="rgba(255,255,255,0.9)" font-size="13"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Tu Decisión</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_decision">Tu Decisión</text>
                     </g>
 
                     <!-- POINT 2 (Traverse) -->
@@ -123,9 +127,9 @@
                         style="opacity: 1; transform: scale(1); transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
                         <circle cx="220" cy="290" r="6" fill="#06b6d4"></circle>
                         <text x="215" y="312" text-anchor="middle" fill="white" font-size="16" font-weight="700"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Bosque</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_bosque">Bosque</text>
                         <text x="215" y="329" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="13"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Conexión</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_conexion">Conexión</text>
                     </g>
 
                     <!-- POINT 3 (High Right) -->
@@ -133,9 +137,9 @@
                         style="opacity: 1; transform: scale(1); transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
                         <circle cx="320" cy="180" r="6" fill="#06b6d4"></circle>
                         <text x="305" y="175" text-anchor="end" fill="white" font-size="16" font-weight="700"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Mirador</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_mirador">Mirador</text>
                         <text x="305" y="192" text-anchor="end" fill="rgba(255,255,255,0.9)" font-size="13"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Superación</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_superacion">Superación</text>
                     </g>
 
                     <!-- META (Peak Center) -->
@@ -143,9 +147,9 @@
                         style="opacity: 1; transform: scale(1); transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
                         <circle cx="180" cy="60" r="8" fill="#06b6d4"></circle>
                         <text x="165" y="55" text-anchor="end" fill="white" font-size="16" font-weight="700"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">META</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_meta">META</text>
                         <text x="165" y="72" text-anchor="end" fill="rgba(255,255,255,0.9)" font-size="13"
-                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Bienestar</text>
+                            style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);" data-t="hero_bienestar">Bienestar</text>
                     </g>
 
                     <!-- Triangle marker above META -->
@@ -164,7 +168,7 @@
                             <span id="moncayo-temp">--</span><span class="unit">°C</span>
                         </div>
                         <div class="location-info">
-                            <span class="loc-name">Pico Moncayo</span>
+                            <span class="loc-name" data-t="hero_moncayo">Pico Moncayo</span>
                         </div>
                     </div>
                 </div>
@@ -178,20 +182,26 @@
         <div class="container">
             <div class="floating-card-content">
                 <div class="floating-card-text">
-                    <h2>¿TE SUENA FAMILIAR?</h2>
+                    <h2 data-t="info_title">¿TE SUENA FAMILIAR?</h2>
                     <ul class="problem-list">
-                        <li><i class="fas fa-times-circle"></i> Llevas meses diciendo "debería hacer más ejercicio"</li>
-                        <li><i class="fas fa-times-circle"></i> El estrés del trabajo te está consumiendo</li>
-                        <li><i class="fas fa-times-circle"></i> Quieres conocer gente pero no sabes cómo</li>
-                        <li><i class="fas fa-times-circle"></i> Te gustaría ir a la montaña pero te da miedo ir solo/a
+                        <li data-t="info_p1"><i class="fas fa-times-circle"></i> Llevas meses diciendo "debería hacer
+                            más ejercicio"</li>
+                        <li data-t="info_p2"><i class="fas fa-times-circle"></i> El estrés del trabajo te está
+                            consumiendo</li>
+                        <li data-t="info_p3"><i class="fas fa-times-circle"></i> Quieres conocer gente pero no sabes
+                            cómo</li>
+                        <li data-t="info_p4"><i class="fas fa-times-circle"></i> Te gustaría ir a la montaña pero te da
+                            miedo ir solo/a
                         </li>
-                        <li><i class="fas fa-times-circle"></i> Piensas "ya es tarde para mí" o "no estoy en forma"</li>
+                        <li data-t="info_p5"><i class="fas fa-times-circle"></i> Piensas "ya es tarde para mí" o "no
+                            estoy en forma"</li>
                     </ul>
-                    <p class="problem-solution"><strong>No estás solo/a. Y sí, puedes hacerlo.</strong></p>
+                    <p class="problem-solution"><strong data-t="info_sol">No estás solo/a. Y sí, puedes
+                            hacerlo.</strong></p>
                 </div>
                 <button class="cta-button"
                     onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
-                    <span>Empieza tu cambio</span>
+                    <span data-t="info_btn">Empieza tu cambio</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -202,25 +212,28 @@
     <section id="filosofia" class="section philosophy reveal">
         <div class="container">
             <div class="section-header">
-                <span class="tagline">Nuestra Esencia</span>
-                <h2>Más que deporte, es <span class="text-gradient">Salud Mental</span></h2>
+                <span class="tagline" data-t="phil_tag">Nuestra Esencia</span>
+                <h2 data-t="phil_title">Más que deporte, es <span class="text-gradient">Salud Mental</span></h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Desconexión Total</h3>
-                    <p>Olvídate del estrés laboral. Aquí el único objetivo es disfrutar del camino y respirar aire puro.
+                    <h3 data-t="phil_card1_title">Desconexión Total</h3>
+                    <p data-t="phil_card1_desc">Olvídate del estrés laboral. Aquí el único objetivo es disfrutar del
+                        camino y respirar aire puro.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-user-group"></i></div>
-                    <h3>Comunidad Segura</h3>
-                    <p>Conoce gente afín a ti (40-70 años) en un ambiente relajado, sin competiciones ni presiones.</p>
+                    <h3 data-t="phil_card2_title">Comunidad Segura</h3>
+                    <p data-t="phil_card2_desc">Conoce gente afín a ti (40-70 años) en un ambiente relajado, sin
+                        competiciones ni presiones.</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon-box"><i class="fa-solid fa-person-hiking"></i></div>
-                    <h3>Para Todos</h3>
-                    <p>No necesitas ser un atleta. Diseñamos rutas accesibles para principiantes y niveles medios.</p>
+                    <h3 data-t="phil_card3_title">Para Todos</h3>
+                    <p data-t="phil_card3_desc">No necesitas ser un atleta. Diseñamos rutas accesibles para
+                        principiantes y niveles medios.</p>
                 </div>
             </div>
         </div>
@@ -231,31 +244,37 @@
         <div class="container impact-container">
             <div class="impact-image">
                 <img src="assets/reto_3x3000_real.jpg" alt="Reto 3x3000 Una vida vívela">
-                <div class="impact-overlay-badge">Proyecto 3x3000</div>
+                <div class="impact-overlay-badge" data-t="impact_badge_main">Proyecto 3x3000</div>
                 <div class="impact-stats-float">
                     <div class="stat-bubble">
-                        <span class="num">+3000</span>
-                        <span class="lab">Motivos</span>
+                        <span class="num" data-t="impact_stat_num">+3000</span>
+                        <span class="lab" data-t="impact_stat_label">Motivos</span>
                     </div>
                 </div>
             </div>
             <div class="impact-content">
-                <span class="tagline">Nuestro Lado Humano</span>
-                <h2>Comprometidos con <span class="text-gradient">la Vida</span></h2>
-                <p class="impact-lead">En ComoKabras creemos que la montaña es un espacio de sanación y altavoz social.
+                <span class="tagline" data-t="impact_tag">Nuestro Lado Humano</span>
+                <h2 data-t="impact_title">Comprometidos con <span class="text-gradient">la Vida</span></h2>
+                <p class="impact-lead" data-t="impact_lead">En ComoKabras creemos que la montaña es un espacio de
+                    sanación y altavoz social.
                 </p>
-                <p>Entre el 2022 y el 2023, colaboramos como parte del equipo de Guías en el <strong>RETO 3x3000: Una
+                <p data-t="impact_p1">Entre el 2022 y el 2023, colaboramos como parte del equipo de Guías en el
+                    <strong>RETO 3x3000: Una
                         vida, vívela</strong>. Un desafío que nos llevó a realizar 3 expediciones al Pirineo para
-                    alcanzar tres cimas de 3.000m (Taillón, Aneto y Monte Perdido).</p>
-                <p>Esta acción no fue solo deportiva; fue una escenificación de las más de 3.000 muertes anuales por
+                    alcanzar tres cimas de 3.000m (Taillón, Aneto y Monte Perdido).
+                </p>
+                <p data-t="impact_p2">Esta acción no fue solo deportiva; fue una escenificación de las más de 3.000
+                    muertes anuales por
                     suicidio en España, con el fin de exigir un <strong>Plan Nacional de Prevención</strong> y promover
                     la <strong>educación emocional</strong>.</p>
                 <div class="impact-meta">
-                    <div class="impact-badge"><i class="fas fa-mountain"></i> 3 Cimas de 3000m</div>
-                    <div class="impact-badge"><i class="fas fa-bullhorn"></i> Plan de Prevención</div>
+                    <div class="impact-badge"><i class="fas fa-mountain"></i> <span data-t="impact_meta1">3 Cimas de
+                            3000m</span></div>
+                    <div class="impact-badge"><i class="fas fa-bullhorn"></i> <span data-t="impact_meta2">Plan de
+                            Prevención</span></div>
                 </div>
                 <div class="impact-collabs-footer">
-                    <p class="small-tag">En colaboración con:</p>
+                    <p class="small-tag" data-t="impact_collab">En colaboración con:</p>
                     <div class="collab-grid">
                         <span>Besarkada Abrazo</span>
                         <span>Stop Suicidios</span>
@@ -273,7 +292,7 @@
     <section class="section how-it-works-section reveal">
         <div class="container">
             <div class="section-header">
-                <h2>Tu camino empieza aquí</h2>
+                <h2 data-t="steps_title">Tu camino empieza aquí</h2>
             </div>
             <div class="steps-grid" style="position: relative;">
                 <!-- Modern Progress Line -->
@@ -288,29 +307,29 @@
                 <!-- Step 1 -->
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Elige tu ruta</h3>
-                    <p>Consulta nuestro calendario y selecciona la que te enamore.</p>
+                    <h3 data-t="step1_title">Elige tu ruta</h3>
+                    <p data-t="step1_desc">Consulta nuestro calendario y selecciona la que te enamore.</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Reserva plaza</h3>
-                    <p>Confirma tu asistencia por WhatsApp o formulario.</p>
+                    <h3 data-t="step2_title">Reserva plaza</h3>
+                    <p data-t="step2_desc">Confirma tu asistencia por WhatsApp o formulario.</p>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Prepárate</h3>
-                    <p>Recibe nuestra guía y lista de material necesario.</p>
+                    <h3 data-t="step3_title">Prepárate</h3>
+                    <p data-t="step3_desc">Recibe nuestra guía y lista de material necesario.</p>
                 </div>
 
                 <!-- Step 4 -->
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h3>¡A caminar!</h3>
-                    <p>Nos vemos en el punto de encuentro para disfrutar.</p>
+                    <h3 data-t="step4_title">¡A caminar!</h3>
+                    <p data-t="step4_desc">Nos vemos en el punto de encuentro para disfrutar.</p>
                 </div>
             </div>
         </div>
@@ -321,8 +340,8 @@
         <div class="container">
             <div class="section-header-row">
                 <div>
-                    <span class="tagline">Explora</span>
-                    <h2>Nuestros Destinos</h2>
+                    <span class="tagline" data-t="routes_tag">Explora</span>
+                    <h2 data-t="routes_title">Nuestros Destinos</h2>
                 </div>
                 <div class="nav-arrows">
                     <button class="arrow-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
@@ -339,13 +358,14 @@
                         <div class="card-badge">Soria</div>
                     </div>
                     <div class="details">
-                        <h2>Rutas por Soria</h2>
-                        <p class="route-meta"><i class="fa-regular fa-clock"></i> 4-5 horas &nbsp;|&nbsp; <i
-                                class="fa-solid fa-layer-group"></i> Nivel Bajo/Medio</p>
-                        <p>Descubre los secretos mejor guardados de Soria. Bosques silenciosos y paisajes que curan el
+                        <h2 data-t="route1_title">Rutas por Soria</h2>
+                        <p class="route-meta"><i class="fa-regular fa-clock"></i> <span data-t="route1_meta">4-5 horas
+                                &nbsp;|&nbsp; <i class="fa-solid fa-layer-group"></i> Nivel Bajo/Medio</span></p>
+                        <p data-t="route1_desc">Descubre los secretos mejor guardados de Soria. Bosques silenciosos y
+                            paisajes que curan el
                             alma. Perfectas para desconectar del estrés y reconectar con la naturaleza en un entorno
                             seguro y guiado.</p>
-                        <a href="#contacto" class="btn btn-primary">Reservar Plaza</a>
+                        <a href="#contacto" class="btn btn-primary" data-t="route_btn">Reservar Plaza</a>
                     </div>
                 </div>
 
@@ -357,13 +377,14 @@
                         <div class="card-badge">Pirineos</div>
                     </div>
                     <div class="details">
-                        <h2>Escapada a Pirineos</h2>
-                        <p class="route-meta"><i class="fa-regular fa-clock"></i> Día completo &nbsp;|&nbsp; <i
-                                class="fa-solid fa-layer-group"></i> Nivel Medio</p>
-                        <p>La majestuosidad de la alta montaña a un ritmo tranquilo. Vistas que te dejarán sin aliento.
+                        <h2 data-t="route2_title">Escapada a Pirineos</h2>
+                        <p class="route-meta"><i class="fa-regular fa-clock"></i> <span data-t="route2_meta">Día
+                                completo &nbsp;|&nbsp; <i class="fa-solid fa-layer-group"></i> Nivel Medio</span></p>
+                        <p data-t="route2_desc">La majestuosidad de la alta montaña a un ritmo tranquilo. Vistas que te
+                            dejarán sin aliento.
                             Una experiencia única para disfrutar de la naturaleza en su máxima expresión con total
                             seguridad.</p>
-                        <a href="#contacto" class="btn btn-primary">Reservar Plaza</a>
+                        <a href="#contacto" class="btn btn-primary" data-t="route_btn">Reservar Plaza</a>
                     </div>
                 </div>
 
@@ -375,12 +396,13 @@
                         <div class="card-badge">La Rioja</div>
                     </div>
                     <div class="details">
-                        <h2>Sierra de Cameros</h2>
-                        <p class="route-meta"><i class="fa-regular fa-clock"></i> 5 horas &nbsp;|&nbsp; <i
-                                class="fa-solid fa-layer-group"></i> Nivel Bajo</p>
-                        <p>Senderos entre viñedos y montañas. Una experiencia sensorial completa en la naturaleza. Ideal
+                        <h2 data-t="route3_title">Sierra de Cameros</h2>
+                        <p class="route-meta"><i class="fa-regular fa-clock"></i> <span data-t="route3_meta">5 horas
+                                &nbsp;|&nbsp; <i class="fa-solid fa-layer-group"></i> Nivel Bajo</span></p>
+                        <p data-t="route3_desc">Senderos entre viñedos y montañas. Una experiencia sensorial completa en
+                            la naturaleza. Ideal
                             para principiantes que buscan una actividad relajada en un entorno espectacular.</p>
-                        <a href="#contacto" class="btn btn-primary">Reservar Plaza</a>
+                        <a href="#contacto" class="btn btn-primary" data-t="route_btn">Reservar Plaza</a>
                     </div>
                 </div>
             </div>
@@ -393,33 +415,87 @@
     <section class="section gallery-section reveal">
         <div class="container section-container">
             <div class="section-header">
-                <span class="tagline">Galería</span>
-                <h2 class="section-title">Momentos Épicos</h2>
-                <p class="section-subtitle">Recuerdos reales de nuestra comunidad</p>
+                <span class="tagline" data-t="gallery_tag">Galería</span>
+                <h2 class="section-title" data-t="gallery_title">Momentos Épicos</h2>
+                <p class="section-subtitle" data-t="gallery_subtitle">Recuerdos reales de nuestra comunidad</p>
             </div>
-            <div class="masonry-grid">
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&amp;w=400" alt="Senderismo">
+            <div class="polaroid-gallery" id="polaroidGallery">
+                <!-- Foto 1 -->
+                <div class="polaroid-item pt-1">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/2023-09-30_19-17-00_Atardecer en Moncayo.jpg"
+                            data-filename="2023-09-30_19-17-00_Atardecer en Moncayo.jpg" alt="Atardecer en Moncayo">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&amp;w=400" alt="Montaña">
+
+                <!-- Foto 2 -->
+                <div class="polaroid-item pt-2">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/DSC01038_pico Vignemale.JPG"
+                            data-filename="DSC01038_pico Vignemale.JPG" alt="Pico Vignemale">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&amp;w=400" alt="Grupo">
+
+                <!-- Foto 3 -->
+                <div class="polaroid-item pt-3">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/IMG_20190223_174447_Refugio La Renclusa.jpg"
+                            data-filename="IMG_20190223_174447_Refugio La Renclusa.jpg" alt="Refugio La Renclusa">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&amp;w=400" alt="Paisaje">
+
+                <!-- Foto 4 -->
+                <div class="polaroid-item pt-4">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/DSC01153_Picos de Europa.JPG"
+                            data-filename="DSC01153_Picos de Europa.JPG" alt="Picos de Europa">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1522163182402-834f871fd851?q=80&amp;w=400" alt="Amigos">
+
+                <!-- Foto 5 -->
+                <div class="polaroid-item pt-5">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/1730102105694_Haya Seca.jpg"
+                            data-filename="1730102105694_Haya Seca.jpg" alt="Haya Seca">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
-                <div class="masonry-item"><img
-                        src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&amp;w=400" alt="Cima">
+
+                <!-- Foto 6 -->
+                <div class="polaroid-item pt-6">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/2023-09-23_13-33-00_Pico Palas.jpg"
+                            data-filename="2023-09-23_13-33-00_Pico Palas.jpg" alt="Pico Palas">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="polaroid-item pt-7">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/IMG_20241214_Moncayo puesta del Belen.jpg"
+                            data-filename="IMG_20241214_Moncayo puesta del Belen.jpg" alt="Moncayo puesta del Belen">
+                        <span class="polaroid-caption"></span>
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="polaroid-item pt-8">
+                    <div class="polaroid-card">
+                        <img src="Fotos Galeria Landing/20250726_1858_Foto Cueva Michaud.jpg"
+                            data-filename="20250726_1858_Foto Cueva Michaud.jpg" alt="Foto Cueva Michaud">
+                        <span class="polaroid-caption"></span>
+                    </div>
                 </div>
             </div>
             <div class="text-center" style="text-align: center; margin-top: 30px;">
                 <a href="https://instagram.com/comokabras_" target="_blank" class="btn btn-outline"
-                    style="color: var(--dark-bg); border-color: var(--dark-bg);">Síguenos en Instagram @Comokabras_</a>
+                    style="color: var(--dark-bg); border-color: var(--dark-bg);" data-t="gallery_insta">Síguenos en
+                    Instagram @Comokabras_</a>
             </div>
         </div>
     </section>
@@ -433,7 +509,7 @@
                         <img src="assets/sheila.jpg" alt="Sheila Guía de Senderismo">
                         <div class="exp-badge">
                             <span class="number">10</span>
-                            <span class="text">Años de<br>Experiencia<br>en Montaña</span>
+                            <span class="text" data-t="sheila_badge">Años de<br>Experiencia<br>en Montaña</span>
                         </div>
                         <ul class="social-icons">
                             <li><a href="https://www.instagram.com/comokabras_/" target="_blank"><i
@@ -448,44 +524,56 @@
                     </div>
                 </div>
                 <div class="about-content">
-                    <span class="tagline">Tu Guía</span>
-                    <h2>Hola, soy Sheila</h2>
-                    <p class="lead">"La naturaleza es la mejor maestra para encontrar paz y salud."</p>
+                    <span class="tagline" data-t="sheila_tag">Tu Guía</span>
+                    <h2 data-t="sheila_title">Hola, soy Sheila</h2>
+                    <p class="lead" data-t="sheila_lead">"La naturaleza es la mejor maestra para encontrar paz y salud."
+                    </p>
 
-                    <p>Soy Sheila, una aventurera apasionada con más de 10 años de experiencia en la naturaleza y 5
+                    <p data-t="sheila_p1">Soy Sheila, una aventurera apasionada con más de 10 años de experiencia en la
+                        naturaleza y 5
                         organizando rutas. Mi misión es acercar a las personas a la montaña, ayudándoles a salir de su
                         zona de confort de forma segura.</p>
 
-                    <p>En <strong>SenderismoComokabras_</strong>, no solo caminamos; aprendemos a vivir el aquí y el
+                    <p data-t="sheila_p2">En <strong>SenderismoComokabras_</strong>, no solo caminamos; aprendemos a
+                        vivir el aquí y el
                         ahora. Organizamos salidas para personas que quieren desconectar del estrés, conocer gente nueva
                         y mejorar su bienestar físico y mental.</p>
 
                     <div class="benefits-list">
-                        <p><strong>Cada ruta es una oportunidad para:</strong></p>
+                        <p><strong data-t="sheila_benefits_title">Cada ruta es una oportunidad para:</strong></p>
                         <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> Desconectar del estrés y reconectar contigo
+                            <li><i class="fa-solid fa-circle-check"></i> <span data-t="sheila_benefit1">Desconectar del
+                                    estrés y reconectar contigo</span>
                             </li>
-                            <li><i class="fa-solid fa-circle-check"></i> Vivir el aquí y el ahora (sin prisas, sin
-                                presión)</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Conocer gente nueva que comparte tu misma
-                                inquietud</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Volver a casa renovado, con esa paz mental que
-                                solo da respirar aire puro</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span data-t="sheila_benefit2">Vivir el aquí y
+                                    el ahora (sin prisas, sin
+                                    presión)</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span data-t="sheila_benefit3">Conocer gente
+                                    nueva que comparte tu misma
+                                    inquietud</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span data-t="sheila_benefit4">Volver a casa
+                                    renovado, con esa paz mental que
+                                    solo da respirar aire puro</span></li>
                         </ul>
                     </div>
 
-                    <p class="promise"><strong>Mi promesa es simple: tú solo tienes que aparecer. Yo me encargo del
+                    <p class="promise"><strong data-t="sheila_promise">Mi promesa es simple: tú solo tienes que
+                            aparecer. Yo me encargo del
                             resto.</strong></p>
 
                     <ul class="stats-list">
-                        <li><i class="fa-solid fa-check-circle"></i> 0 Accidentes en 5 años</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Guía titulada con paciencia infinita</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Experta en acompañar principiantes</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Rutas diseñadas para que disfrutes (no para sufrir)
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-t="sheila_stat1">0 Accidentes en 5
+                                años</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-t="sheila_stat2">Guía titulada con
+                                paciencia infinita</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-t="sheila_stat3">Experta en acompañar
+                                principiantes</span></li>
+                        <li><i class="fa-solid fa-check-circle"></i> <span data-t="sheila_stat4">Rutas diseñadas para
+                                que disfrutes (no para sufrir)</span>
                         </li>
                     </ul>
 
-                    <a href="#contacto" class="btn btn-primary">Hablemos</a>
+                    <a href="#contacto" class="btn btn-primary" data-t="sheila_btn">Hablemos</a>
                 </div>
             </div>
         </div>
@@ -495,8 +583,8 @@
     <section id="testimonios" class="section testimonials-modern reveal">
         <div class="container">
             <div class="section-header">
-                <span class="tagline">Experiencias Reales</span>
-                <h2>Lo que dicen <span class="text-gradient">nuestros senderistas</span></h2>
+                <span class="tagline" data-t="test_tag">Experiencias Reales</span>
+                <h2 data-t="test_title">Lo que dicen <span class="text-gradient">nuestros senderistas</span></h2>
                 <div class="testimonials-meta">
                     <div class="rating-avg">
                         <span class="score">5.0</span>
@@ -504,7 +592,7 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <span class="count">(6 reseñas)</span>
+                        <span class="count" data-t="test_count">(6 reseñas)</span>
                     </div>
                 </div>
             </div>
@@ -517,8 +605,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Álvaro I.</h4>
-                                    <span class="testimonial-date">3 dic 2025</span>
+                                    <h4 class="author-name" data-t="test1_name">Álvaro I.</h4>
+                                    <span class="testimonial-date" data-t="test1_date">3 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -528,14 +616,15 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">Cuando nos paramos en el collado y tras ver factible su ascenso de forma
+                            <p class="quote" data-t="test1_quote">Cuando nos paramos en el collado y tras ver factible
+                                su ascenso de forma
                                 segura todo comprobado todo por Sheila y Juan Pablo iniciamos el último tramo hacia
                                 cima.</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Otras rutas</span>
+                            <span class="route-badge" data-t="test1_route">Otras rutas</span>
                             <div class="tags">
-                                <span class="tag-pill">Paisajes y cimas</span>
+                                <span class="tag-pill" data-t="test1_tag">Paisajes y cimas</span>
                             </div>
                         </div>
                     </div>
@@ -548,8 +637,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Cristina S.</h4>
-                                    <span class="testimonial-date">4 dic 2025</span>
+                                    <h4 class="author-name" data-t="test2_name">Cristina S.</h4>
+                                    <span class="testimonial-date" data-t="test2_date">4 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -559,13 +648,14 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">Disfrutar y ser consciente de todo el camino y llegar al destino con
+                            <p class="quote" data-t="test2_quote">Disfrutar y ser consciente de todo el camino y llegar
+                                al destino con
                                 sentimiento de equipo.</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Garmo Negro</span>
+                            <span class="route-badge" data-t="test2_route">Garmo Negro</span>
                             <div class="tags">
-                                <span class="tag-pill">Equipo y ambiente</span>
+                                <span class="tag-pill" data-t="test2_tag">Equipo y ambiente</span>
                             </div>
                         </div>
                     </div>
@@ -578,8 +668,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Mónica T.</h4>
-                                    <span class="testimonial-date">4 dic 2025</span>
+                                    <h4 class="author-name" data-t="test3_name">Mónica T.</h4>
+                                    <span class="testimonial-date" data-t="test3_date">4 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -589,16 +679,17 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">He hecho varias rutas ya, y siempre genial… y esperando que preparen otra,
+                            <p class="quote" data-t="test3_quote">He hecho varias rutas ya, y siempre genial… y
+                                esperando que preparen otra,
                                 que me apunto de cabeza y sin pensarlo. Momentos hay muchísimos y en cada ruta, no
                                 podría quedarme con uno solo. Recuerdo uno haciendo burpies en una cima, o dormir bajo
                                 las estrellas, contemplar un atardecer de infarto en los picos de Europa… buaa,
                                 muchísimos momentos</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Otras rutas</span>
+                            <span class="route-badge" data-t="test3_route">Otras rutas</span>
                             <div class="tags">
-                                <span class="tag-pill">Paisajes y cimas</span>
+                                <span class="tag-pill" data-t="test3_tag">Paisajes y cimas</span>
                             </div>
                         </div>
                     </div>
@@ -611,8 +702,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Javier G.</h4>
-                                    <span class="testimonial-date">4 dic 2025</span>
+                                    <h4 class="author-name" data-t="test4_name">Javier G.</h4>
+                                    <span class="testimonial-date" data-t="test4_date">4 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -622,7 +713,8 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">Amo la montaña, aunque el vértigo siempre haya sido mi compañero de
+                            <p class="quote" data-t="test4_quote">Amo la montaña, aunque el vértigo siempre haya sido mi
+                                compañero de
                                 mochila. En la ascensión a la Munia (3. 133 m) descubrí algo esencial: el poder de
                                 sentirse acompañado por quienes saben guiar, sostener y motivar. Sheila y Juan Pablo
                                 (Komocabras) estuvieron a mi lado con profesionalidad, calma y una sensibilidad
@@ -630,10 +722,10 @@
                                 serenidad, apoyo y buena compañía.</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Otras rutas</span>
+                            <span class="route-badge" data-t="test4_route">Otras rutas</span>
                             <div class="tags">
-                                <span class="tag-pill">Seguridad</span>
-                                <span class="tag-pill">Equipo</span>
+                                <span class="tag-pill" data-t="test4_tag1">Seguridad</span>
+                                <span class="tag-pill" data-t="test4_tag2">Equipo</span>
                             </div>
                         </div>
                     </div>
@@ -646,8 +738,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Fernando M.</h4>
-                                    <span class="testimonial-date">5 dic 2025</span>
+                                    <h4 class="author-name" data-t="test5_name">Fernando M.</h4>
+                                    <span class="testimonial-date" data-t="test5_date">5 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -657,16 +749,17 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">Organizacion, previsión y toma de decisiones, todo ello en un nivel óptimo,
+                            <p class="quote" data-t="test5_quote">Organizacion, previsión y toma de decisiones, todo
+                                ello en un nivel óptimo,
                                 moviéndose en unos rangos de seguridad por encima de estandares. Todos fueron buenos
                                 momentos,,, pero si tengo que apuntar alguno apuntaré, la jornada por los puertos de
                                 Amieva (picos de Europa).</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Otras rutas</span>
+                            <span class="route-badge" data-t="test5_route">Otras rutas</span>
                             <div class="tags">
-                                <span class="tag-pill">Organización</span>
-                                <span class="tag-pill">Seguridad</span>
+                                <span class="tag-pill" data-t="test5_tag1">Organización</span>
+                                <span class="tag-pill" data-t="test5_tag2">Seguridad</span>
                             </div>
                         </div>
                     </div>
@@ -679,8 +772,8 @@
                         <div class="testimonial-header">
                             <div class="author-meta">
                                 <div class="author-info">
-                                    <h4 class="author-name">Luis M.</h4>
-                                    <span class="testimonial-date">6 dic 2025</span>
+                                    <h4 class="author-name" data-t="test6_name">Luis M.</h4>
+                                    <span class="testimonial-date" data-t="test6_date">6 dic 2025</span>
                                 </div>
                             </div>
                             <div class="stars">
@@ -690,14 +783,15 @@
                         </div>
                         <div class="quote-wrapper">
                             <i class="fas fa-quote-left quote-icon"></i>
-                            <p class="quote">Cuando hice cima, esa satisfacción de estar ahí después del esfuerzo, los
+                            <p class="quote" data-t="test6_quote">Cuando hice cima, esa satisfacción de estar ahí
+                                después del esfuerzo, los
                                 paisajes increíbles q se ven y sobre todo haberlo hecho con Sheila y Juan Pablo que son
                                 unos máquinas y hacen q la ruta sea especial…</p>
                         </div>
                         <div class="testimonial-footer">
-                            <span class="route-badge">Garmo Negro</span>
+                            <span class="route-badge" data-t="test6_route">Garmo Negro</span>
                             <div class="tags">
-                                <span class="tag-pill">Paisajes y cimas</span>
+                                <span class="tag-pill" data-t="test6_tag">Paisajes y cimas</span>
                             </div>
                         </div>
                     </div>
@@ -716,16 +810,19 @@
                         alt="Escritura y naturaleza">
                 </div>
                 <div class="substack-content">
-                    <span class="tagline">Pensamientos de Altura</span>
-                    <h2>El Substack de Comokabras_</h2>
-                    <p>Historias, reflexiones y consejos sobre senderismo que no caben en un post de Instagram. Un
+                    <span class="tagline" data-t="substack_tag">Pensamientos de Altura</span>
+                    <h2 data-t="substack_title">El Substack de Comokabras_</h2>
+                    <p data-t="substack_desc">Historias, reflexiones y consejos sobre senderismo que no caben en un post
+                        de Instagram. Un
                         espacio
                         pausado para conectar de verdad con la montaña y con nosotros mismos.</p>
-                    <div class="substack-cta-wrapper">
-                        <a href="https://comokabras.substack.com/" target="_blank" class="btn btn-primary substack-btn">
-                            <i class="fa-solid fa-envelope-open-text"></i> Entrar a leer los posts
+                    <div class="substack-actions">
+                        <a href="https://comokabras.substack.com/" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-t="substack_btn">Entrar a leer los posts</span>
                         </a>
-                        <p class="substack-hint">¡Únete a nuestra comunidad de lectores!</p>
+                        <span class="substack-hint" data-t="substack_hint">¡Únete a nuestra comunidad de
+                            lectores!</span>
                     </div>
                 </div>
             </div>
@@ -736,21 +833,22 @@
     <section class="section community-section">
         <div class="community-overlay"></div>
         <div class="community-content">
-            <span class="tagline" style="color: var(--white); opacity: 0.9;">Recurso Gratuito</span>
-            <h2>Consigue tu Guía de Senderismo</h2>
-            <p>Suscríbete y descarga "Tu primera ruta sin morir en el intento" + nuestras rutas semanales.</p>
+            <span class="tagline" style="color: var(--white); opacity: 0.9;" data-t="comm_tag">Recurso Gratuito</span>
+            <h2 data-t="comm_title">Consigue tu Guía de Senderismo</h2>
+            <p data-t="comm_desc">Suscríbete y descarga "Tu primera ruta sin morir en el intento" + nuestras rutas
+                semanales.</p>
             <form class="newsletter-form">
-                <input type="email" placeholder="Tu mejor email..." required>
-                <button type="submit" class="btn btn-primary">¡Quiero la Guía!</button>
+                <input type="email" placeholder="Tu mejor email..." required data-t-placeholder="comm_placeholder">
+                <button type="submit" class="btn btn-primary" data-t="comm_btn">¡Quiero la Guía!</button>
             </form>
             <div class="community-stats">
                 <div class="stat">
                     <i class="fab fa-whatsapp"></i>
-                    <span>80+ Senderistas</span>
+                    <span data-t="comm_stat1">80+ Senderistas</span>
                 </div>
                 <div class="stat">
                     <i class="fas fa-envelope"></i>
-                    <span>Lecturas de Substack</span>
+                    <span data-t="comm_stat2">Lecturas de Substack</span>
                 </div>
             </div>
         </div>
@@ -764,7 +862,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>ComoKabras</h3>
-                    <p>Senderismo guiado para reconectar con la naturaleza. Soria, La Rioja, Pirineos.</p>
+                    <p data-t="footer_desc">Senderismo guiado para reconectar con la naturaleza. Soria, La Rioja,
+                        Pirineos.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/comokabras_/" target="_blank"><i
                                 class="fa-brands fa-instagram"></i></a>
@@ -774,16 +873,16 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Enlaces</h4>
+                    <h4 data-t="footer_links">Enlaces</h4>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#rutas">Rutas</a></li>
-                        <li><a href="#filosofia">Filosofía</a></li>
-                        <li><a href="#sheila">Sobre Mí</a></li>
+                        <li><a href="#inicio" data-t="nav_inicio">Inicio</a></li>
+                        <li><a href="#rutas" data-t="nav_rutas">Rutas</a></li>
+                        <li><a href="#filosofia" data-t="nav_filosofia">Filosofía</a></li>
+                        <li><a href="#sheila" data-t="nav_about">Sobre Mí</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contacto</h4>
+                    <h4 data-t="footer_contact">Contacto</h4>
                     <ul class="contact-list">
                         <li><i class="fa-solid fa-envelope"></i> sheilamerinovalverde@gmail.com</li>
                         <li><i class="fa-solid fa-phone"></i> +34 658 809 101</li>
@@ -792,7 +891,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ComoKabras. Todos los derechos reservados.</p>
+                <p>&copy; 2024 ComoKabras. <span data-t="footer_rights">Todos los derechos reservados.</span></p>
             </div>
         </div>
     </footer>
@@ -807,20 +906,23 @@
                         alt="Guía Senderismo">
                 </div>
                 <div class="modal-text">
-                    <span class="tagline">¡Espera! No te vayas con las manos vacías</span>
-                    <h2>Descarga tu Guía Gratuita</h2>
-                    <p>Consigue nuestra "Guía del Principiante: Tu primera ruta de senderismo sin morir en el intento".
+                    <span class="tagline" data-t="modal_tag">¡Espera! No te vayas con las manos vacías</span>
+                    <h2 data-t="modal_title">Descarga tu Guía Gratuita</h2>
+                    <p data-t="modal_desc">Consigue nuestra "Guía del Principiante: Tu primera ruta de senderismo sin
+                        morir en el intento".
                     </p>
                     <form class="modal-form">
-                        <input type="email" placeholder="Tu mejor email..." required>
-                        <button type="submit" class="btn btn-primary">Enviar Guía a mi Email</button>
+                        <input type="email" placeholder="Tu mejor email..." required
+                            data-t-placeholder="comm_placeholder">
+                        <button type="submit" class="btn btn-primary" data-t="modal_btn">Enviar Guía a mi Email</button>
                     </form>
-                    <p class="modal-footer-text">Olvida el estrés, recuerda vivir.</p>
+                    <p class="modal-footer-text" data-t="modal_footer">Olvida el estrés, recuerda vivir.</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js?v=2"></script>
 </body>
 

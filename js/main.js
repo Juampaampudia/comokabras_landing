@@ -5,17 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = '#0f172a';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            }
+            navLinks.classList.toggle('active');
+            // Toggle bars icon to X if you want, but simple toggle for now
         });
     }
 
@@ -310,4 +301,99 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Language Selector Logic
+    const langBtn = document.querySelector('.lang-btn');
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const currentLangText = document.querySelector('.current-lang');
+
+    // Toggle Dropdown
+    if (langBtn) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+            langBtn.classList.toggle('active');
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        if (langDropdown) {
+            langDropdown.classList.remove('active');
+            langBtn.classList.remove('active');
+        }
+    });
+
+    // Set Language Function
+    function setLanguage(lang) {
+        if (!translations[lang]) return;
+
+        // Update all elements with data-t
+        document.querySelectorAll('[data-t]').forEach(el => {
+            const key = el.getAttribute('data-t');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-t-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-t-placeholder');
+            if (translations[lang][key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
+        // Update UI Button
+        currentLangText.innerHTML = lang.toUpperCase();
+
+        // Update active class in dropdown
+        langOptions.forEach(opt => {
+            opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+        });
+
+        // Save preference
+        localStorage.setItem('preferred-lang', lang);
+        document.documentElement.lang = lang;
+    }
+
+    // Language Option Click
+    langOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = option.getAttribute('data-lang');
+            setLanguage(lang);
+            langDropdown.classList.remove('active');
+            langBtn.classList.remove('active');
+        });
+    });
+
+    // Polaroid Gallery Logic
+    const initPolaroids = () => {
+        const polaroidItems = document.querySelectorAll('.polaroid-item');
+        polaroidItems.forEach(item => {
+            const img = item.querySelector('img');
+            const caption = item.querySelector('.polaroid-caption');
+            if (img && caption) {
+                const filename = img.getAttribute('data-filename') || img.src;
+                // Extraer el nombre real: remover prefijos de cámara, fechas y extensión
+                let cleanName = filename.split('/').pop(); // Solo nombre de archivo
+                // Remover: 1. Fecha (YYYY-MM-DD), 2. Prefix Cámara (IMG_, DSC_, PXL_), 3. Timestamps numéricos y guiones sobrantes
+                cleanName = cleanName.replace(/^(IMG_|DSC\d*_?|PXL_|\d{4}-\d{2}-\d{2}_?|\d{8}_?|\d{6}_?|\d{10,}_?|[0-9_-]+)+/i, '');
+                // Remover la extensión (desde el último punto)
+                const lastDotIndex = cleanName.lastIndexOf('.');
+                if (lastDotIndex > 0) cleanName = cleanName.substring(0, lastDotIndex);
+
+                caption.textContent = cleanName.replace(/_/g, ' ').trim();
+            }
+        });
+    };
+    initPolaroids();
+
+    // Initialize Language
+    const savedLang = localStorage.getItem('preferred-lang') ||
+        (navigator.language.startsWith('fr') ? 'fr' :
+            navigator.language.startsWith('en') ? 'en' : 'es');
+    setLanguage(savedLang);
 });
