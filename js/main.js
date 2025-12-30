@@ -21,18 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.9)';
-            navbar.style.backdropFilter = 'blur(10px)';
-            navbar.style.padding = '15px 0';
-            navbar.style.transition = '0.3s';
+
+    function updateNavbar() {
+        if (window.scrollY > 20) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.backdropFilter = 'none';
-            navbar.style.padding = '20px 0';
+            navbar.classList.remove('scrolled');
         }
-    });
+    }
+
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar(); // Initial check
 
     // Smooth Scroll for Anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -227,4 +226,88 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Goat mascot or hero section not found');
     }
     */
+
+    // Progress Bar Animation for "How It Works" Section
+    const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressFill = document.querySelector('.progress-line-fill');
+                const progressDots = document.querySelectorAll('.progress-dot');
+
+                if (progressFill) {
+                    // Activate the progress fill
+                    progressFill.classList.add('active');
+
+                    // Animate dots sequentially
+                    progressDots.forEach((dot, index) => {
+                        setTimeout(() => {
+                            dot.classList.add('active');
+                        }, 300 + (index * 400)); // Stagger the animation
+                    });
+                }
+
+                // Only animate once
+                progressObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+
+    // Observe the how-it-works section
+    const howItWorksSection = document.querySelector('.how-it-works-section');
+    if (howItWorksSection) {
+        progressObserver.observe(howItWorksSection);
+    }
+
+    // Scroll Reveal Animation logic
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: stop observing once revealed
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Exit Intent Modal Logic
+    const exitModal = document.getElementById('exitModal');
+    const closeBtn = document.querySelector('.close-modal');
+    let modalShown = false;
+
+    if (exitModal) {
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !modalShown) {
+                exitModal.style.display = 'block';
+                modalShown = true;
+                // Save to localStorage so it doesn't show again in this session
+                sessionStorage.setItem('exitModalShown', 'true');
+            }
+        });
+
+        // Check if shown in this session
+        if (sessionStorage.getItem('exitModalShown') === 'true') {
+            modalShown = true;
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                exitModal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === exitModal) {
+                exitModal.style.display = 'none';
+            }
+        });
+    }
 });

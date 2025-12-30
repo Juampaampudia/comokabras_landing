@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del Principiante | ComoKabras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --dark-bg: #0f172a;
+            --white: #ffffff;
+            --gray-text: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-bg);
+            background: var(--light-bg);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+            border: 1px solid #f1f5f9;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--dark-bg);
+        }
+
+        .section h2 i {
+            color: var(--primary);
+            background: #eff6ff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.2rem;
+        }
+
+        .list-tips {
+            list-style: none;
+        }
+
+        .list-tips li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+        }
+
+        .list-tips li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .tip-box {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: var(--primary-dark);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .header-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="assets/guia_cover.png" alt="ComoKabras Guía" class="header-image">
+
+        <header class="guide-header">
+            <span class="tagline">Recurso Exclusivo ComoKabras</span>
+            <h1>Guía del Principiante</h1>
+            <p class="lead">Tu primera ruta de senderismo sin morir en el intento (y disfrutando cada paso).</p>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-hiking"></i> 1. El Equipo: Menos es Más</h2>
+            <p>Muchos principiantes cometen el error de cargar con todo. Aquí lo esencial:</p>
+            <ul class="list-tips">
+                <li><strong>Capas, capas, capas:</strong> La técnica de la cebolla es clave. Camiseta transpirable,
+                    forro polar ligero y un cortavientos o impermeable.</li>
+                <li><strong>El Calzado:</strong> No estrenes botas en una ruta larga. Usa calcetines específicos de
+                    trekking para evitar ampollas.</li>
+                <li><strong>La Mochila:</strong> Una de 20-30 litros es suficiente para el día. Asegúrate de ajustar
+                    bien las cintas a la cadera.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-shield-alt"></i> 2. Seguridad de "Kabra"</h2>
+            <p>La montaña no perdona la improvisación. Antes de salir:</p>
+            <ul class="list-tips">
+                <li>Mira el pronóstico del tiempo 2 horas antes de salir.</li>
+                <li>Lleva siempre agua extra y algo de comida energética (frutos secos, fruta).</li>
+                <li>Descárgate el mapa offline o el track de la ruta.</li>
+                <li>Informa a alguien de a dónde vas y cuándo esperas volver.</li>
+            </ul>
+        </section>
+
+        <div class="tip-box">
+            <strong><i class="fas fa-lightbulb"></i> TIP DE GUÍA:</strong> Si en algún momento sientes que la ruta te
+            supera, para, respira y valora volver. La cima siempre estará ahí, lo importante es el camino y volver
+            sano/a.
+        </div>
+
+        <section class="section">
+            <h2><i class="fas fa-brain"></i> 3. Mente y Sensaciones</h2>
+            <p>El senderismo es 50% piernas y 50% mente. Aprende a gestionar tu energía:</p>
+            <ul class="list-tips">
+                <li><strong>El ritmo:</strong> Encuentra uno que te permita hablar sin ahogarte. Si no puedes hablar,
+                    vas demasiado rápido.</li>
+                <li><strong>Las paradas:</strong> Paradas cortas y frecuentes son mejores que una muy larga que enfríe
+                    tus músculos.</li>
+                <li><strong>Disfruta:</strong> Levanta la vista, haz fotos, respira el silencio.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-leaf"></i> 4. El Respeto</h2>
+            <p>Somos invitados en la naturaleza. No dejes rastro:</p>
+            <ul class="list-tips">
+                <li>Lo que sube contigo, baja contigo (incluyendo mondas de fruta).</li>
+                <li>Mantente en los senderos marcados para no erosionar el terreno.</li>
+                <li>El silencio es parte del paisaje. Respétalo.</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <h3>¿Te gustaría dar el siguiente paso?</h3>
+            <p style="margin-bottom: 30px; color: var(--gray-text);">Únete a una de nuestras salidas grupales y deja que
+                nosotros nos encarguemos de toda la logística y seguridad.</p>
+            <a href="index.html#rutas" class="btn">Ver Próximas Rutas</a>
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #94a3b8;">&copy; 2025 ComoKabras - Senderismo con Alma
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

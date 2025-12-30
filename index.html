@@ -157,16 +157,14 @@
             <!-- Weather Widget (Pico Moncayo) -->
             <div class="weather-widget-container">
                 <div class="weather-card">
-                    <img src="assets/weather_widget_bg.png" alt="Tiempo en Pico Moncayo" class="widget-bg">
-                    <!-- Integrated Goat Mascot -->
-                    <img src="assets/goat_mascot.png" alt="Cabra ComoKabras" class="goat-mascot-widget" id="goatMascot">
+                    <img src="assets/weather_widget_bg_v2.png" alt="Información Meteorológica Pico Moncayo"
+                        class="widget-bg">
                     <div class="weather-content">
                         <div class="temp-display">
                             <span id="moncayo-temp">--</span><span class="unit">°C</span>
                         </div>
                         <div class="location-info">
                             <span class="loc-name">Pico Moncayo</span>
-                            <span class="loc-sub">Soria / Zaragoza</span>
                         </div>
                     </div>
                 </div>
@@ -182,10 +180,12 @@
                 <div class="floating-card-text">
                     <h2>¿TE SUENA FAMILIAR?</h2>
                     <ul class="problem-list">
-                        <li><i class="fas fa-times-circle"></i> Llevas meses diciendo "debería hacer más ejercicio"
-                        </li>
+                        <li><i class="fas fa-times-circle"></i> Llevas meses diciendo "debería hacer más ejercicio"</li>
                         <li><i class="fas fa-times-circle"></i> El estrés del trabajo te está consumiendo</li>
                         <li><i class="fas fa-times-circle"></i> Quieres conocer gente pero no sabes cómo</li>
+                        <li><i class="fas fa-times-circle"></i> Te gustaría ir a la montaña pero te da miedo ir solo/a
+                        </li>
+                        <li><i class="fas fa-times-circle"></i> Piensas "ya es tarde para mí" o "no estoy en forma"</li>
                     </ul>
                     <p class="problem-solution"><strong>No estás solo/a. Y sí, puedes hacerlo.</strong></p>
                 </div>
@@ -199,7 +199,7 @@
     </section>
 
     <!-- Value Proposition / Philosophy -->
-    <section id="filosofia" class="section philosophy">
+    <section id="filosofia" class="section philosophy reveal">
         <div class="container">
             <div class="section-header">
                 <span class="tagline">Nuestra Esencia</span>
@@ -226,35 +226,65 @@
         </div>
     </section>
 
+    <!-- Social Impact Section -->
+    <section class="section social-impact reveal">
+        <div class="container impact-container">
+            <div class="impact-image">
+                <img src="assets/reto_3x3000_real.jpg" alt="Reto 3x3000 Una vida vívela">
+                <div class="impact-overlay-badge">Proyecto 3x3000</div>
+                <div class="impact-stats-float">
+                    <div class="stat-bubble">
+                        <span class="num">+3000</span>
+                        <span class="lab">Motivos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-content">
+                <span class="tagline">Nuestro Lado Humano</span>
+                <h2>Comprometidos con <span class="text-gradient">la Vida</span></h2>
+                <p class="impact-lead">En ComoKabras creemos que la montaña es un espacio de sanación y altavoz social.
+                </p>
+                <p>Entre el 2022 y el 2023, colaboramos como parte del equipo de Guías en el <strong>RETO 3x3000: Una
+                        vida, vívela</strong>. Un desafío que nos llevó a realizar 3 expediciones al Pirineo para
+                    alcanzar tres cimas de 3.000m (Taillón, Aneto y Monte Perdido).</p>
+                <p>Esta acción no fue solo deportiva; fue una escenificación de las más de 3.000 muertes anuales por
+                    suicidio en España, con el fin de exigir un <strong>Plan Nacional de Prevención</strong> y promover
+                    la <strong>educación emocional</strong>.</p>
+                <div class="impact-meta">
+                    <div class="impact-badge"><i class="fas fa-mountain"></i> 3 Cimas de 3000m</div>
+                    <div class="impact-badge"><i class="fas fa-bullhorn"></i> Plan de Prevención</div>
+                </div>
+                <div class="impact-collabs-footer">
+                    <p class="small-tag">En colaboración con:</p>
+                    <div class="collab-grid">
+                        <span>Besarkada Abrazo</span>
+                        <span>Stop Suicidios</span>
+                        <span>Cascantvm</span>
+                        <span>Tudeocio</span>
+                        <span>Urzante</span>
+                        <span>Y muchos más...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
-    <section class="section how-it-works-section">
+    <section class="section how-it-works-section reveal">
         <div class="container">
             <div class="section-header">
                 <h2>Tu camino empieza aquí</h2>
             </div>
             <div class="steps-grid" style="position: relative;">
-                <!-- Decorative River Line -->
-                <svg class="steps-river" preserveAspectRatio="none" viewBox="0 0 1200 100"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="riverGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0" />
-                            <stop offset="10%" style="stop-color:#3b82f6;stop-opacity:0.4" />
-                            <stop offset="90%" style="stop-color:#3b82f6;stop-opacity:0.4" />
-                            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
-                        </linearGradient>
-                    </defs>
-                    <!-- Base River -->
-                    <path d="M 150 50 Q 300 90, 450 50 T 750 50 T 1050 50" fill="none" stroke="url(#riverGradient)"
-                        stroke-width="15" stroke-linecap="round" />
-
-                    <!-- Flowing Water Effect -->
-                    <path d="M 150 50 Q 300 90, 450 50 T 750 50 T 1050 50" fill="none" stroke="rgba(255,255,255,0.4)"
-                        stroke-width="3" stroke-dasharray="20, 30" stroke-linecap="round">
-                        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="30s"
-                            repeatCount="indefinite" />
-                    </path>
-                </svg>
+                <!-- Modern Progress Line -->
+                <div class="progress-line-container">
+                    <div class="progress-line-bg"></div>
+                    <div class="progress-line-fill"></div>
+                    <div class="progress-dot" data-step="1"></div>
+                    <div class="progress-dot" data-step="2"></div>
+                    <div class="progress-dot" data-step="3"></div>
+                    <div class="progress-dot" data-step="4"></div>
+                </div>
                 <!-- Step 1 -->
                 <div class="step-card">
                     <div class="step-number">1</div>
@@ -287,7 +317,7 @@
     </section>
 
     <!-- Routes Gallery -->
-    <section id="rutas" class="section routes-section">
+    <section id="rutas" class="section routes-section reveal">
         <div class="container">
             <div class="section-header-row">
                 <div>
@@ -360,7 +390,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="section gallery-section">
+    <section class="section gallery-section reveal">
         <div class="container section-container">
             <div class="section-header">
                 <span class="tagline">Galería</span>
@@ -395,7 +425,7 @@
     </section>
 
     <!-- About Sheila -->
-    <section id="sheila" class="section about-section">
+    <section id="sheila" class="section about-section reveal">
         <div class="container">
             <div class="about-layout">
                 <div class="about-image">
@@ -462,7 +492,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonios" class="section testimonials-modern">
+    <section id="testimonios" class="section testimonials-modern reveal">
         <div class="container">
             <div class="section-header">
                 <span class="tagline">Experiencias Reales</span>
@@ -677,15 +707,41 @@
     </section>
 
 
+    <!-- Substack Section -->
+    <section class="section substack-section reveal">
+        <div class="container substack-container">
+            <div class="substack-card">
+                <div class="substack-image">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800"
+                        alt="Escritura y naturaleza">
+                </div>
+                <div class="substack-content">
+                    <span class="tagline">Pensamientos de Altura</span>
+                    <h2>El Substack de Comokabras_</h2>
+                    <p>Historias, reflexiones y consejos sobre senderismo que no caben en un post de Instagram. Un
+                        espacio
+                        pausado para conectar de verdad con la montaña y con nosotros mismos.</p>
+                    <div class="substack-cta-wrapper">
+                        <a href="https://comokabras.substack.com/" target="_blank" class="btn btn-primary substack-btn">
+                            <i class="fa-solid fa-envelope-open-text"></i> Entrar a leer los posts
+                        </a>
+                        <p class="substack-hint">¡Únete a nuestra comunidad de lectores!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Community Section -->
     <section class="section community-section">
         <div class="community-overlay"></div>
         <div class="community-content">
-            <h2>Únete a la Comunidad</h2>
-            <p>Recibe nuestras rutas, consejos y buenas vibras directamente en tu email.</p>
+            <span class="tagline" style="color: var(--white); opacity: 0.9;">Recurso Gratuito</span>
+            <h2>Consigue tu Guía de Senderismo</h2>
+            <p>Suscríbete y descarga "Tu primera ruta sin morir en el intento" + nuestras rutas semanales.</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Tu mejor email..." required>
-                <button type="submit" class="btn btn-primary">Suscribirme</button>
+                <button type="submit" class="btn btn-primary">¡Quiero la Guía!</button>
             </form>
             <div class="community-stats">
                 <div class="stat">
@@ -694,7 +750,7 @@
                 </div>
                 <div class="stat">
                     <i class="fas fa-envelope"></i>
-                    <span>Newsletter Semanal</span>
+                    <span>Lecturas de Substack</span>
                 </div>
             </div>
         </div>
@@ -740,6 +796,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- Exit Intent Modal -->
+    <div id="exitModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=400"
+                        alt="Guía Senderismo">
+                </div>
+                <div class="modal-text">
+                    <span class="tagline">¡Espera! No te vayas con las manos vacías</span>
+                    <h2>Descarga tu Guía Gratuita</h2>
+                    <p>Consigue nuestra "Guía del Principiante: Tu primera ruta de senderismo sin morir en el intento".
+                    </p>
+                    <form class="modal-form">
+                        <input type="email" placeholder="Tu mejor email..." required>
+                        <button type="submit" class="btn btn-primary">Enviar Guía a mi Email</button>
+                    </form>
+                    <p class="modal-footer-text">Olvida el estrés, recuerda vivir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js?v=2"></script>
 </body>
