@@ -28,7 +28,7 @@ const translations = {
         "info_p1": "Llevas meses diciendo \"debería hacer más ejercicio\"",
         "info_p2": "El estrés del trabajo te está consumiendo",
         "info_p3": "Quieres conocer gente pero no sabes cómo",
-        "info_p4": "Te gustaría ir a la montaña pero te da miedo ir solo/a",
+        "info_p4": "Te gustaría empezar a hacer senderismo, pero te da miedo ir solo/a.",
         "info_p5": "Piensas \"ya es tarde para mí\" o \"no estoy en forma\"",
         "info_sol": "No estás solo/a. Y sí, puedes hacerlo.",
         "info_btn": "Empieza tu cambio",
@@ -75,10 +75,10 @@ const translations = {
         "route1_desc": "Descubre los secretos mejor guardados de Soria. Bosques silenciosos y paisajes que curan el alma. Perfectas para desconectar del estrés y reconectar con la naturaleza en un entorno seguro y guiado.",
         "route2_title": "Escapada a Pirineos",
         "route2_meta": "Día completo &nbsp;|&nbsp; Nivel Medio",
-        "route2_desc": "La majestuosidad de la alta montaña a un ritmo tranquilo. Vistas que te dejarán sin aliento. Una experiencia única para disfrutar de la naturaleza en su máxima expresión con total seguridad.",
-        "route3_title": "Sierra de Cameros",
-        "route3_meta": "5 horas &nbsp;|&nbsp; Nivel Bajo",
-        "route3_desc": "Senderos entre viñedos y montañas. Una experiencia sensorial completa en la naturaleza. Ideal para principiantes que buscan una actividad relajada en un entorno espectacular.",
+        "route2_desc": "La majestuosidad de las cimas de los Pirineos a un ritmo tranquilo de senderismo. Vistas que te dejarán sin aliento. Una experiencia única para disfrutar de la naturaleza en su máxima expresión con total seguridad.",
+        "route3_title": "Ezcaray y Sierra Cebollera",
+        "route3_meta": "4-5 horas &nbsp;|&nbsp; Nivel Fácil/Medio",
+        "route3_desc": "Desde los mágicos hayedos de Ezcaray hasta la pureza del Parque Natural de Sierra Cebollera. Descubre la Rioja más auténtica a través de senderos llenos de vida, agua y paisajes inolvidables.",
         "route_btn": "Reservar Plaza",
 
         // Gallery
@@ -92,7 +92,7 @@ const translations = {
         "sheila_tag": "Tu Guía",
         "sheila_title": "Hola, soy Sheila",
         "sheila_lead": "\"La naturaleza es la mejor maestra para encontrar paz y salud.\"",
-        "sheila_p1": "Soy Sheila, una aventurera apasionada con más de 10 años de experiencia en la naturaleza y 5 organizando rutas. Mi misión es acercar a las personas a la montaña, ayudándoles a salir de su zona de confort de forma segura.",
+        "sheila_p1": "Soy Sheila, una aventurera apasionada con más de 10 años de experiencia en la naturaleza y 5 organizando rutas. Mi misión es acercar a las personas a la naturaleza, ayudándoles a salir de su zona de confort de forma segura.",
         "sheila_p2": "En <strong>SenderismoComokabras_</strong>, no solo caminamos; aprendemos a vivir el aquí y el ahora. Organizamos salidas para personas que quieren desconectar del estrés, conocer gente nueva y mejorar su bienestar físico y mental.",
         "sheila_benefits_title": "Cada ruta es una oportunidad para:",
         "sheila_benefit1": "Desconectar del estrés y reconectar contigo",
@@ -158,6 +158,7 @@ const translations = {
         "comm_stat1": "80+ Senderistas",
         "comm_stat2": "Lecturas de Substack",
         "comm_placeholder": "Tu mejor email...",
+        "comm_name_placeholder": "Tu nombre...",
 
         // Footer
         "footer_desc": "Senderismo guiado para reconectar con la naturaleza. Soria, La Rioja, Pirineos.",
@@ -204,7 +205,7 @@ const translations = {
         "info_p1": "You've been saying \"I should exercise more\" for months",
         "info_p2": "Work stress is consuming you",
         "info_p3": "You want to meet people but don't know how",
-        "info_p4": "You'd like to go to the mountains but are afraid to go alone",
+        "info_p4": "You'd like to start hiking, but you're afraid to go alone.",
         "info_p5": "You think \"it's too late for me\" or \"I'm not in shape\"",
         "info_sol": "You are not alone. And yes, you can do it.",
         "info_btn": "Start your change",
@@ -251,10 +252,10 @@ const translations = {
         "route1_desc": "Discover Soria's best-kept secrets. Silent forests and landscapes that heal the soul. Perfect for disconnecting from stress and reconnecting with nature in a safe and guided environment.",
         "route2_title": "Pyrenees Getaway",
         "route2_meta": "Full day &nbsp;|&nbsp; Medium Level",
-        "route2_desc": "The majesty of the high mountain at a calm pace. Views that will take your breath away. A unique experience to enjoy nature at its best with total safety.",
-        "route3_title": "Sierra de Cameros",
-        "route3_meta": "5 hours &nbsp;|&nbsp; Low Level",
-        "route3_desc": "Trails through vineyards and mountains. A complete sensory experience in nature. Ideal for beginners looking for a relaxed activity in a spectacular setting.",
+        "route2_desc": "The majesty of the Pyrenean peaks at a calm hiking pace. Breathtaking views. A unique experience to enjoy nature at its best with total safety.",
+        "route3_title": "Ezcaray & Sierra Cebollera",
+        "route3_meta": "4-5 hours &nbsp;|&nbsp; Easy/Medium Level",
+        "route3_desc": "From the magical beech forests of Ezcaray to the purity of Sierra Cebollera Natural Park. Discover the most authentic Rioja through trails full of life, water, and unforgettable landscapes.",
         "route_btn": "Book Your Spot",
 
         // Gallery
@@ -268,7 +269,7 @@ const translations = {
         "sheila_tag": "Your Guide",
         "sheila_title": "Hi, I'm Sheila",
         "sheila_lead": "\"Nature is the best teacher for finding peace and health.\"",
-        "sheila_p1": "I'm Sheila, a passionate adventurer with over 10 years of experience in nature and 5 years organizing routes. My mission is to bring people closer to the mountains, helping them step out of their comfort zone safely.",
+        "sheila_p1": "I'm Sheila, a passionate adventurer with over 10 years of experience in nature and 5 years organizing routes. My mission is to bring people closer to nature, helping them step out of their comfort zone safely.",
         "sheila_p2": "At <strong>SenderismoComokabras_</strong>, we don't just walk; we learn to live in the here and now. We organize outings for people who want to disconnect from stress, meet new people, and improve their physical and mental wellbeing.",
         "sheila_benefits_title": "Every route is an opportunity to:",
         "sheila_benefit1": "Disconnect from stress and reconnect with yourself",
@@ -334,6 +335,7 @@ const translations = {
         "comm_stat1": "80+ Hikers",
         "comm_stat2": "Substack Readings",
         "comm_placeholder": "Your best email...",
+        "comm_name_placeholder": "Your name...",
 
         // Footer
         "footer_desc": "Guided hiking to reconnect with nature. Soria, La Rioja, Pyrenees.",
@@ -380,7 +382,7 @@ const translations = {
         "info_p1": "Cela fait des mois que vous vous dites : « Je devrais faire plus d'exercice »",
         "info_p2": "Le stress du travail vous consume",
         "info_p3": "Vous voulez rencontrer des gens mais ne savez pas comment",
-        "info_p4": "Vous aimeriez aller à la montagne mais vous avez peur d'y aller seul(e)",
+        "info_p4": "Vous aimeriez commencer la randonnée, mais vous avez peur d'y aller seul(e).",
         "info_p5": "Vous pensez : « Il est trop tard pour moi » ou « Je ne suis pas en forme »",
         "info_sol": "Vous n'êtes pas seul(e). Et oui, vous pouvez le faire.",
         "info_btn": "Commencez votre changement",
@@ -427,10 +429,10 @@ const translations = {
         "route1_desc": "Découvrez les secrets les mieux gardés de Soria. Des forêts silencieuses et des paysages qui guérissent l'âme. Parfait pour se déconnecter du stress et renouer avec la nature dans un cadre sécurisé et guidé.",
         "route2_title": "Escapade aux Pyrénées",
         "route2_meta": "Journée complète &nbsp;|&nbsp; Niveau Moyen",
-        "route2_desc": "La majesté de la haute montagne à un rythme paisible. Des vues à couper le souffle. Une expérience unique pour profiter de la nature au sommet en toute sécurité.",
-        "route3_title": "Sierra de Cameros",
-        "route3_meta": "5 heures &nbsp;|&nbsp; Niveau Bas",
-        "route3_desc": "Sentiers entre vignes et montagnes. Une expérience sensorielle complète en pleine nature. Idéal pour les débutants à la recherche d'une activité relaxante dans un cadre spectaculaire.",
+        "route2_desc": "La majesté des sommets pyrénéens à un rythme de randonnée paisible. Des vues à couper le souffle. Une expérience unique pour profiter de la nature au sommet en toute sécurité.",
+        "route3_title": "Ezcaray et Sierra Cebollera",
+        "route3_meta": "4-5 heures &nbsp;|&nbsp; Niveau Facile/Moyen",
+        "route3_desc": "Des hêtraies magiques d'Ezcaray à la pureté du Parc Naturel de la Sierra Cebollera. Découvrez la Rioja la plus authentique à travers des sentiers pleins de vie, d'eau et de paysages inoubliables.",
         "route_btn": "Réserver une Place",
 
         // Gallery
@@ -444,7 +446,7 @@ const translations = {
         "sheila_tag": "Votre Guide",
         "sheila_title": "Bonjour, je suis Sheila",
         "sheila_lead": "« La nature est le meilleur professeur pour trouver la paix et la santé. »",
-        "sheila_p1": "Je suis Sheila, une aventurière passionnée avec plus de 10 ans d'expérience dans la nature et 5 ans d'organisation d'itinéraires. Ma mission est de rapprocher les gens de la montagne, en les aidant à sortir de leur zone de confort en toute sécurité.",
+        "sheila_p1": "Je suis Sheila, une aventurière passionnée avec plus de 10 ans d'expérience dans la nature et 5 ans d'organisation d'itinéraires. Ma mission est de rapprocher les gens de la nature, en les aidant à sortir de leur zone de confort en toute sécurité.",
         "sheila_p2": "Chez <strong>SenderismoComokabras_</strong>, nous ne marchons pas seulement ; nous apprenons à vivre l'ici et le maintenant. Nous organisons des sorties pour les personnes qui souhaitent se déconnecter du stress, rencontrer de nouvelles personnes et améliorer leur bien-être physique et mental.",
         "sheila_benefits_title": "Chaque itinéraire est l'occasion de :",
         "sheila_benefit1": "Se déconnecter du stress et se reconnecter avec soi-même",
@@ -510,6 +512,7 @@ const translations = {
         "comm_stat1": "80+ Randonneurs",
         "comm_stat2": "Lectures Substack",
         "comm_placeholder": "Votre meilleur e-mail...",
+        "comm_name_placeholder": "Votre nom...",
 
         // Footer
         "footer_desc": "Randonnée guidée pour renouer avec la nature. Soria, La Rioja, Pyrénées.",

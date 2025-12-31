@@ -391,9 +391,143 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     initPolaroids();
 
+    // Form Submission Handling (Google Sheets)
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        // Visual feedback
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // Replace with your Google Apps Script Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzG9Z5aP8XM924Rue9SqPY0zuUE-biJaRoOEB9EXZ_BYjcduF5LPWzWTI5LLw3sG9z0/exec';
+
+        try {
+            // Using no-cors mode or a proper Apps Script setup
+            // For production, Apps Script should handle CORS or use a POST request
+            await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // Important for Apps Script
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...data,
+                    timestamp: new Date().toLocaleString(),
+                    source: form.classList.contains('modal-form') ? 'Modal' : 'Newsletter'
+                })
+            });
+
+            // Success feedback
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+            form.reset();
+
+            // Set a flag so modal doesn't show again
+            if (form.classList.contains('modal-form')) {
+                setTimeout(() => {
+                    exitModal.style.display = 'none';
+                    sessionStorage.setItem('exitModalShown', 'true');
+                }, 2000);
+            }
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            submitBtn.innerHTML = '<i class="fas fa-times"></i> Error';
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 3000);
+        }
+    };
+
+    document.querySelectorAll('.newsletter-form, .modal-form').forEach(form => {
+        form.addEventListener('submit', handleFormSubmit);
+    });
+
     // Initialize Language
     const savedLang = localStorage.getItem('preferred-lang') ||
         (navigator.language.startsWith('fr') ? 'fr' :
             navigator.language.startsWith('en') ? 'en' : 'es');
+    // Testimonials Shuffle Animation
+    function initTestimonialSlider() {
+        const $slider = $('#card-slider');
+        const $wrap = $('.slider-wrap');
+        if (!$slider.length) return;
+
+        let cards = $slider.find('.slider-item').toArray();
+        let animDelay;
+
+        function updateSlider(direction = 'next') {
+            if (cards.length < 4) return;
+
+            if (direction === 'next') {
+                // MOVE TOP TO BACK
+                TweenMax.fromTo(cards[0], 0.5,
+                    { x: 0, y: 0, opacity: 0.75, zIndex: 0 },
+                    {
+                        x: 0, y: -120, opacity: 0, zIndex: 0, delay: 0.03, ease: Cubic.easeInOut, onComplete: () => {
+                            const firstElem = cards.shift();
+                            cards.push(firstElem);
+                        }
+                    }
+                );
+
+                TweenMax.to(cards[1], 0.5, { x: 0, y: 0, opacity: 0.75, zIndex: 1, boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)', ease: Cubic.easeInOut });
+
+                TweenMax.to(cards[2], 0.5, {
+                    bezier: [{ x: 0, y: 250 }, { x: 65, y: 200 }, { x: 79, y: 125 }],
+                    boxShadow: '-5px 8px 8px 0 rgba(82,89,129,0.05)',
+                    zIndex: 2,
+                    opacity: 1,
+                    ease: Cubic.easeInOut
+                });
+
+                TweenMax.fromTo(cards[3], 0.5,
+                    { x: 0, y: 400, opacity: 0, zIndex: 0 },
+                    { x: 0, y: 250, opacity: 0.75, zIndex: 0, ease: Cubic.easeInOut }
+                );
+            } else {
+                // MOVE BACK TO FRONT
+                const lastElem = cards.pop();
+                cards.unshift(lastElem);
+
+                TweenMax.fromTo(cards[0], 0.5, { x: 0, y: -120, opacity: 0, zIndex: 0 }, { x: 79, y: 125, opacity: 1, zIndex: 2, ease: Cubic.easeInOut });
+                TweenMax.to(cards[1], 0.5, { x: 0, y: 0, opacity: 0.75, zIndex: 1, ease: Cubic.easeInOut });
+                TweenMax.to(cards[2], 0.5, { x: 0, y: 250, opacity: 0.75, zIndex: 0, ease: Cubic.easeInOut });
+                TweenMax.to(cards[3], 0.5, { x: 0, y: 400, opacity: 0, zIndex: 0, ease: Cubic.easeInOut });
+            }
+
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearTimeout(animDelay);
+            animDelay = setTimeout(() => updateSlider('next'), 5000);
+        }
+
+        // Click Events
+        $wrap.on('click', '.slider-btn.next', () => updateSlider('next'));
+        $wrap.on('click', '.slider-btn.prev', () => updateSlider('prev'));
+
+        // Initial positions
+        cards.forEach((card, i) => {
+            if (i === 0) TweenMax.set(card, { x: 0, y: 0, opacity: 0.75, zIndex: 1 });
+            else if (i === 1) TweenMax.set(card, { x: 79, y: 125, opacity: 1, zIndex: 2 });
+            else if (i === 2) TweenMax.set(card, { x: 0, y: 250, opacity: 0.75, zIndex: 0 });
+            else TweenMax.set(card, { x: 0, y: 400, opacity: 0, zIndex: 1 });
+        });
+
+        resetTimer();
+    }
+
+    // Run initialization
+    initTestimonialSlider();
+
     setLanguage(savedLang);
 });

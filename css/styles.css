@@ -1649,7 +1649,7 @@ body.dark-mode .info-text p {
     max-width: 1200px;
     margin: 60px auto;
     position: relative;
-    min-height: 800px;
+    min-height: 1500px;
     padding: 20px;
 }
 
@@ -1735,6 +1735,84 @@ body.dark-mode .info-text p {
     top: 45%;
     left: 78%;
     transform: rotate(-9deg);
+}
+
+.pt-9 {
+    top: 10%;
+    left: 15%;
+    transform: rotate(4deg);
+}
+
+.pt-10 {
+    top: 15%;
+    left: 45%;
+    transform: rotate(-6deg);
+}
+
+.pt-11 {
+    top: 20%;
+    left: 70%;
+    transform: rotate(8deg);
+}
+
+.pt-12 {
+    top: 30%;
+    left: 10%;
+    transform: rotate(-10deg);
+}
+
+.pt-13 {
+    top: 35%;
+    left: 35%;
+    transform: rotate(3deg);
+}
+
+.pt-14 {
+    top: 40%;
+    left: 60%;
+    transform: rotate(-4deg);
+}
+
+.pt-15 {
+    top: 50%;
+    left: 20%;
+    transform: rotate(7deg);
+}
+
+.pt-16 {
+    top: 55%;
+    left: 50%;
+    transform: rotate(-5deg);
+}
+
+.pt-17 {
+    top: 60%;
+    left: 80%;
+    transform: rotate(9deg);
+}
+
+.pt-18 {
+    top: 70%;
+    left: 15%;
+    transform: rotate(-3deg);
+}
+
+.pt-19 {
+    top: 75%;
+    left: 40%;
+    transform: rotate(6deg);
+}
+
+.pt-20 {
+    top: 80%;
+    left: 65%;
+    transform: rotate(-7deg);
+}
+
+.pt-21 {
+    top: 85%;
+    left: 30%;
+    transform: rotate(10deg);
 }
 
 /* Hover Effects */
@@ -1846,9 +1924,9 @@ body.dark-mode .info-text p {
     align-items: center;
 }
 
-.newsletter-form input[type="email"] {
+.newsletter-form input {
     flex: 1;
-    min-width: 280px;
+    min-width: 250px;
     max-width: 400px;
     padding: 15px 25px;
     border: none;
@@ -1859,7 +1937,7 @@ body.dark-mode .info-text p {
     color: #1e293b;
 }
 
-.newsletter-form input[type="email"]::placeholder {
+.newsletter-form input::placeholder {
     color: #94a3b8;
 }
 
@@ -1907,12 +1985,14 @@ body.dark-mode .info-text p {
     color: white;
 }
 
-/* Modern Testimonials */
+/* Modern Testimonials Shuffle Slider */
 .testimonials-modern {
     background: #f8fafc;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    min-height: 850px;
+    /* Essential for absolute positioning of items */
 }
 
 .testimonials-meta {
@@ -1948,120 +2028,80 @@ body.dark-mode .info-text p {
     font-size: 0.9rem;
 }
 
-.testimonials-grid-modern {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 50px auto 0;
-    padding: 0 20px;
-}
-
-.testimonial-card-modern {
-    background: white;
-    border-radius: 24px;
-    padding: 35px;
+/* Slider Wrap */
+.slider-wrap {
+    height: 550px;
+    width: 100%;
+    margin-top: 60px;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid #e2e8f0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
-.testimonial-card-modern:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-color: var(--primary);
+#card-slider {
+    position: relative;
+    width: 530px;
+    height: 400px;
 }
 
-.card-glow {
+.slider-item {
+    width: 530px;
+    padding: 40px;
+    border-radius: 24px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
     position: absolute;
-    top: 0;
+    opacity: 0;
+    z-index: 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     left: 0;
+    top: 0;
+    border: 1px solid #f1f5f9;
+}
+
+.animation-card_image {
+    min-width: 80px;
+    max-width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.animation-card_image img {
     width: 100%;
     height: 100%;
-    border-radius: 24px;
-    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent);
-    pointer-events: none;
+    object-fit: cover;
 }
 
-.testimonial-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 25px;
+.animation-card_content {
+    margin-left: 30px;
+    text-align: left;
 }
 
-.author-info h4 {
-    font-size: 1.1rem;
+.animation-card_content_title {
     color: var(--dark-bg);
-    margin-bottom: 4px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.testimonial-date {
-    font-size: 0.85rem;
-    color: var(--gray-text);
-}
-
-.testimonial-header .stars {
-    color: #fbbf24;
-    font-size: 0.9rem;
-    display: flex;
-    gap: 2px;
-}
-
-.quote-wrapper {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.quote-icon {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    font-size: 2rem;
-    color: rgba(59, 130, 246, 0.1);
-}
-
-.quote {
-    font-size: 1rem;
-    line-height: 1.7;
+.animation-card_content_description {
     color: #475569;
-    position: relative;
-    z-index: 1;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
-.testimonial-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 20px;
-    margin-top: auto;
-}
-
-.route-badge {
-    background: #eff6ff;
-    color: var(--primary);
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.8rem;
+.animation-card_content_city {
+    font-size: 0.85rem;
     font-weight: 600;
-}
-
-.tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.tag-pill {
-    background: #f1f5f9;
-    color: #64748b;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 0.5px;
 }
 
 /* Dark Mode for Testimonials */
@@ -2074,34 +2114,107 @@ body.dark-mode .rating-avg {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-body.dark-mode .rating-avg .score {
+body.dark-mode .rating-avg .score,
+body.dark-mode .animation-card_content_title {
     color: var(--white);
 }
 
-body.dark-mode .testimonial-card-modern {
+body.dark-mode .slider-item {
     background: var(--dark-card);
     border-color: #1e293b;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .author-info h4 {
+body.dark-mode .animation-card_content_description {
+    color: var(--gray-text);
+}
+
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+.slider-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    font-size: 1.2rem;
+}
+
+.slider-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.slider-btn:active {
+    transform: scale(0.95);
+}
+
+body.dark-mode .slider-btn {
+    background: var(--dark-card);
+    border-color: #1e293b;
     color: var(--white);
 }
 
-body.dark-mode .quote {
-    color: var(--gray-text);
+/* Responsive slider */
+@media (max-width: 1024px) {
+    .slider-controls {
+        right: 0;
+        bottom: -80px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
-body.dark-mode .testimonial-footer {
-    border-top-color: #1e293b;
-}
+@media (max-width: 768px) {
+    .testimonials-modern {
+        min-height: 700px;
+    }
 
-body.dark-mode .route-badge {
-    background: rgba(59, 130, 246, 0.1);
-}
+    .slider-wrap {
+        height: 600px;
+    }
 
-body.dark-mode .tag-pill {
-    background: #0f172a;
-    color: var(--gray-text);
+    #card-slider {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .slider-item {
+        width: 100%;
+        max-width: 350px;
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .animation-card_content {
+        margin-left: 0;
+        margin-top: 25px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2113,7 +2226,7 @@ body.dark-mode .tag-pill {
         flex-direction: column;
     }
 
-    .newsletter-form input[type="email"] {
+    .newsletter-form input {
         width: 100%;
     }
 
