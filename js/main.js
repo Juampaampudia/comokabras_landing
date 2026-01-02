@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const lastDotIndex = cleanName.lastIndexOf('.');
                 if (lastDotIndex > 0) cleanName = cleanName.substring(0, lastDotIndex);
 
-                caption.textContent = cleanName.replace(/_/g, ' ').trim();
+                caption.textContent = cleanName.replace(/[_-]/g, ' ').trim();
             }
         });
     };

@@ -1,18 +1,28 @@
 /* Base & Reset */
 :root {
-    --primary: #3b82f6;
-    --primary-dark: #1d4ed8;
-    --dark-bg: #0f172a;
-    --dark-card: #1e293b;
+    --primary: #2C5F4F;
+    /* Verde Pino - Naturaleza, confianza */
+    --primary-light: #3a7a66;
+    --primary-dark: #1e4035;
+    --accent: #4A90E2;
+    /* Azul Cielo - Acción, energía */
+    --secondary: #8B7355;
+    /* Tierra - Calidez, autenticidad */
+    --dark-bg: #1a1a1a;
+    /* Negro Noche */
+    --dark-card: #2c2c2c;
+    --light-bg: #FFFFFF;
+    /* Blanco Nieve */
+    --gray-text: #64748b;
     --light-text: #f8fafc;
-    --gray-text: #94a3b8;
     --white: #ffffff;
     --glass: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
-    --radius: 16px;
+    --radius: 20px;
     --container: 1200px;
     --font-main: 'Outfit', sans-serif;
     --font-serif: 'Playfair Display', serif;
+    --font-accent: 'Caveat', cursive;
 }
 
 * {
@@ -60,7 +70,7 @@ h4 {
 }
 
 .text-gradient {
-    background: linear-gradient(to right, var(--primary), #60a5fa);
+    background: linear-gradient(to right, var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -122,11 +132,12 @@ h4 {
 }
 
 .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 16px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(44, 95, 79, 0.85);
+    /* Optimized for Verde Pino */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 14px 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -193,16 +204,18 @@ h4 {
 
 .nav-links .btn-nav {
     padding: 10px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 .nav-links .btn-nav:hover {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: var(--accent);
+    border-color: var(--accent);
     color: var(--white);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
 }
 
 /* Language Selector */
@@ -576,7 +589,7 @@ h4 {
     top: 0;
     bottom: 0;
     width: 6px;
-    background: linear-gradient(to bottom, var(--primary), #60a5fa);
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
 }
 
 .floating-card-text {
@@ -620,10 +633,11 @@ h4 {
 }
 
 .cta-button {
-    background: var(--dark-bg);
+    background: var(--primary);
+    /* Use brand green */
     color: var(--white);
     border: none;
-    padding: 18px 35px;
+    padding: 20px 40px;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -633,13 +647,13 @@ h4 {
     gap: 12px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     white-space: nowrap;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(44, 95, 79, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background: var(--primary);
+    box-shadow: 0 15px 40px rgba(44, 95, 79, 0.3);
+    background: var(--primary-light);
 }
 
 .cta-button i {
@@ -779,12 +793,12 @@ h4 {
     width: 0%;
     height: 100%;
     background: linear-gradient(90deg,
-            #3b82f6 0%,
-            #60a5fa 50%,
-            #3b82f6 100%);
+            var(--primary) 0%,
+            var(--accent) 50%,
+            var(--primary) 100%);
     border-radius: 10px;
     transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 20px rgba(44, 95, 79, 0.4);
 }
 
 .progress-line-fill.active {
@@ -1089,7 +1103,8 @@ body.dark-mode .route-card .details .route-meta {
 }
 
 .exp-badge {
-    background: var(--primary);
+    background: var(--secondary);
+    /* Tierra color */
     font-family: 'Outfit', sans-serif;
     color: #fff;
     text-align: center;
@@ -1103,7 +1118,7 @@ body.dark-mode .route-card .details .route-meta {
     transform: perspective(400px) rotateY(90deg);
     transform-origin: right;
     transition: 1s;
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 20px rgba(139, 115, 85, 0.3);
 }
 
 .img-wrapper:hover .exp-badge {
