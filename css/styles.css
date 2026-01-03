@@ -1,24 +1,21 @@
 /* Base & Reset */
 :root {
-    --primary: #2C5F4F;
-    /* Verde Pino - Naturaleza, confianza */
-    --primary-light: #3a7a66;
-    --primary-dark: #1e4035;
-    --accent: #4A90E2;
-    /* Azul Cielo - Acción, energía */
-    --secondary: #8B7355;
-    /* Tierra - Calidez, autenticidad */
-    --dark-bg: #1a1a1a;
-    /* Negro Noche */
-    --dark-card: #2c2c2c;
-    --light-bg: #FFFFFF;
-    /* Blanco Nieve */
+    --primary: #3b82f6;
+    /* Azul - Confianza y profesionalidad */
+    --primary-light: #60a5fa;
+    --primary-dark: #1d4ed8;
+    --accent: #f59e0b;
+    /* Ámbar - Acción y contraste */
+    --dark-bg: #0f172a;
+    /* Slate Dark */
+    --dark-card: #1e293b;
+    --light-bg: #f8fafc;
     --gray-text: #64748b;
     --light-text: #f8fafc;
     --white: #ffffff;
     --glass: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
-    --radius: 20px;
+    --radius: 16px;
     --container: 1200px;
     --font-main: 'Outfit', sans-serif;
     --font-serif: 'Playfair Display', serif;
@@ -132,12 +129,12 @@ h4 {
 }
 
 .navbar.scrolled {
-    background: rgba(44, 95, 79, 0.85);
-    /* Optimized for Verde Pino */
+    background: rgba(15, 23, 42, 0.9);
+    /* Fondo oscuro para contraste azul */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 14px 0;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -524,11 +521,12 @@ h4 {
 
 .location-info .loc-name {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 2px;
+    line-height: 1.1;
+    text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -647,12 +645,12 @@ h4 {
     gap: 12px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     white-space: nowrap;
-    box-shadow: 0 10px 30px rgba(44, 95, 79, 0.2);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(44, 95, 79, 0.3);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
     background: var(--primary-light);
 }
 
@@ -999,14 +997,18 @@ h4 {
     top: 0;
     left: 0;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 25px 20px;
     z-index: -1;
     color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .route-card .details h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
     color: var(--dark-bg);
     font-weight: 700;
 }
@@ -1022,14 +1024,18 @@ h4 {
 }
 
 .route-card .details p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.88rem;
+    line-height: 1.5;
     color: #475569;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .route-card .details .btn {
-    margin-top: 10px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    align-self: center;
+    width: fit-content;
 }
 
 /* Force dark text in route cards even in dark mode because the card background is white */
@@ -1071,6 +1077,12 @@ body.dark-mode .route-card .details .route-meta {
     border-radius: var(--radius);
 }
 
+@media (max-width: 768px) {
+    .img-wrapper {
+        height: 500px;
+    }
+}
+
 .img-wrapper:before {
     content: '';
     position: absolute;
@@ -1103,8 +1115,7 @@ body.dark-mode .route-card .details .route-meta {
 }
 
 .exp-badge {
-    background: var(--secondary);
-    /* Tierra color */
+    background: var(--primary);
     font-family: 'Outfit', sans-serif;
     color: #fff;
     text-align: center;
@@ -1118,7 +1129,7 @@ body.dark-mode .route-card .details .route-meta {
     transform: perspective(400px) rotateY(90deg);
     transform-origin: right;
     transition: 1s;
-    box-shadow: 0 10px 20px rgba(139, 115, 85, 0.3);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 .img-wrapper:hover .exp-badge {
@@ -1664,7 +1675,7 @@ body.dark-mode .info-text p {
     max-width: 1200px;
     margin: 60px auto;
     position: relative;
-    min-height: 1500px;
+    min-height: 1100px;
     padding: 20px;
 }
 
@@ -1705,74 +1716,74 @@ body.dark-mode .info-text p {
 
 /* Specific Positions and Rotations (Desktop) */
 .pt-1 {
-    top: 0%;
-    left: 5%;
+    top: 2%;
+    left: 8%;
     transform: rotate(-8deg);
 }
 
 .pt-2 {
-    top: 5%;
-    left: 30%;
+    top: 0%;
+    left: 38%;
     transform: rotate(5deg);
 }
 
 .pt-3 {
-    top: 0%;
-    left: 55%;
+    top: 4%;
+    left: 68%;
     transform: rotate(-3deg);
 }
 
 .pt-4 {
-    top: 5%;
-    left: 80%;
+    top: 23%;
+    left: 75%;
     transform: rotate(12deg);
 }
 
 .pt-5 {
-    top: 40%;
-    left: 2%;
+    top: 26%;
+    left: 42%;
     transform: rotate(10deg);
 }
 
 .pt-6 {
-    top: 45%;
-    left: 28%;
+    top: 21%;
+    left: 10%;
     transform: rotate(-5deg);
 }
 
 .pt-7 {
-    top: 40%;
-    left: 53%;
+    top: 44%;
+    left: 15%;
     transform: rotate(7deg);
 }
 
 .pt-8 {
-    top: 45%;
-    left: 78%;
+    top: 47%;
+    left: 48%;
     transform: rotate(-9deg);
 }
 
 .pt-9 {
-    top: 10%;
-    left: 15%;
+    top: 42%;
+    left: 80%;
     transform: rotate(4deg);
 }
 
 .pt-10 {
-    top: 15%;
-    left: 45%;
+    top: 65%;
+    left: 72%;
     transform: rotate(-6deg);
 }
 
 .pt-11 {
-    top: 20%;
-    left: 70%;
+    top: 68%;
+    left: 35%;
     transform: rotate(8deg);
 }
 
 .pt-12 {
-    top: 30%;
-    left: 10%;
+    top: 66%;
+    left: 5%;
     transform: rotate(-10deg);
 }
 
@@ -1830,58 +1841,81 @@ body.dark-mode .info-text p {
     transform: rotate(10deg);
 }
 
-/* Hover Effects */
-.polaroid-item:hover {
-    z-index: 100;
+/* Hover & Active Effects */
+.polaroid-item:hover,
+.polaroid-item.active-polaroid {
+    z-index: 500;
 }
 
-.polaroid-item:hover .polaroid-card {
-    transform: rotate(0deg) scale(1.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+.polaroid-item:hover .polaroid-card,
+.polaroid-item.active-polaroid .polaroid-card {
+    transform: rotate(0deg) scale(1.15) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
-.polaroid-item:hover .polaroid-caption {
+.polaroid-item:hover .polaroid-caption,
+.polaroid-item.active-polaroid .polaroid-caption {
     transform: rotate(0deg);
     color: var(--primary);
+}
+
+.polaroid-item.active-polaroid .polaroid-card {
+    border-color: var(--primary);
 }
 
 /* Responsive */
 @media (max-width: 968px) {
     .polaroid-gallery {
         min-height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding-top: 60px;
+        perspective: 1000px;
     }
 
     .polaroid-item {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        transform: none !important;
-        margin: 0 auto;
+        position: relative;
+        transform: rotate(calc(var(--r, 0deg)));
+        margin: 0;
+    }
+
+    /* Assign random-like rotations using CSS variables or nth-child */
+    .polaroid-item:nth-child(even) {
+        --r: 3deg;
+    }
+
+    .polaroid-item:nth-child(odd) {
+        --r: -3deg;
+    }
+
+    .polaroid-item:nth-child(3n) {
+        --r: 5deg;
     }
 
     .polaroid-card {
-        width: 100%;
-        max-width: 300px;
+        width: 250px;
+        max-width: 90vw;
     }
 }
 
 @media (max-width: 600px) {
     .polaroid-gallery {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
 
     .polaroid-card {
         max-width: 100%;
     }
 
-    .polaroid-item:hover .polaroid-card {
-        transform: scale(1.05);
-        /* Less scale on mobile */
+    .polaroid-item.active-polaroid .polaroid-card {
+        transform: scale(1.08) !important;
+    }
+
+    /* Reducción de fotos en móvil para mejorar carga y rendimiento */
+    .polaroid-item:nth-child(n+13) {
+        display: none;
     }
 }
 

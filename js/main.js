@@ -372,21 +372,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Polaroid Gallery Logic
     const initPolaroids = () => {
         const polaroidItems = document.querySelectorAll('.polaroid-item');
+
         polaroidItems.forEach(item => {
             const img = item.querySelector('img');
             const caption = item.querySelector('.polaroid-caption');
+
+            // 1. Set Captions from filenames
             if (img && caption) {
                 const filename = img.getAttribute('data-filename') || img.src;
-                // Extraer el nombre real: remover prefijos de cámara, fechas y extensión
-                let cleanName = filename.split('/').pop(); // Solo nombre de archivo
-                // Remover: 1. Fecha (YYYY-MM-DD), 2. Prefix Cámara (IMG_, DSC_, PXL_), 3. Timestamps numéricos y guiones sobrantes
+                let cleanName = filename.split('/').pop();
                 cleanName = cleanName.replace(/^(IMG_|DSC\d*_?|PXL_|\d{4}-\d{2}-\d{2}_?|\d{8}_?|\d{6}_?|\d{10,}_?|[0-9_-]+)+/i, '');
-                // Remover la extensión (desde el último punto)
                 const lastDotIndex = cleanName.lastIndexOf('.');
                 if (lastDotIndex > 0) cleanName = cleanName.substring(0, lastDotIndex);
-
                 caption.textContent = cleanName.replace(/[_-]/g, ' ').trim();
             }
+
+            // 2. Click/Touch to bring to front effect
+            item.addEventListener('click', function (e) {
+                e.stopPropagation();
+
+                if (this.classList.contains('active-polaroid')) {
+                    this.classList.remove('active-polaroid');
+                    return;
+                }
+
+                polaroidItems.forEach(p => p.classList.remove('active-polaroid'));
+                this.classList.add('active-polaroid');
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', () => {
+            polaroidItems.forEach(p => p.classList.remove('active-polaroid'));
         });
     };
     initPolaroids();
@@ -461,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!$slider.length) return;
 
         let cards = $slider.find('.slider-item').toArray();
-        let animDelay;
+
 
         function updateSlider(direction = 'next') {
             if (cards.length < 4) return;
@@ -503,13 +520,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 TweenMax.to(cards[3], 0.5, { x: 0, y: 400, opacity: 0, zIndex: 0, ease: Cubic.easeInOut });
             }
 
-            resetTimer();
+
         }
 
-        function resetTimer() {
-            clearTimeout(animDelay);
-            animDelay = setTimeout(() => updateSlider('next'), 5000);
-        }
+
 
         // Click Events
         $wrap.on('click', '.slider-btn.next', () => updateSlider('next'));
@@ -523,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else TweenMax.set(card, { x: 0, y: 400, opacity: 0, zIndex: 1 });
         });
 
-        resetTimer();
+
     }
 
     // Run initialization
